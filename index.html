@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+        <link rel="stylesheet" href="/main.css" />
+        <script src="/main.js" defer></script>
+        <title>binvis</title>
+    </head>
+    <body>
+        <header class="container">
+            <hgroup>
+                <h1>binvis</h1>
+                <h2>Visualize the binary number system.</h2>
+            </hgroup>
+        </header>
+        <hr>
+        <main class="container">
+            <article class="text-center">
+                <p style="font-size: 70px;" id="binaryCounter">00000000</p>
+                <p style="font-size: 40px;" class="text-secondary" id="base10Counter">0</p>
+                <p class="text-secondary" style="margin-top: 0; font-size: 30px;">
+                    <span style="color: red" onclick="flipBit(128)" id="128bit">128</span>
+                    +
+                    <span style="color: red" onclick="flipBit(64)" id="64bit">64</span>
+                    +
+                    <span style="color: red" onclick="flipBit(32)" id="32bit">32</span>
+                    +
+                    <span style="color: red" onclick="flipBit(16)" id="16bit">16</span>
+                    +
+                    <span style="color: red" onclick="flipBit(8)" id="8bit">8</span>
+                    +
+                    <span style="color: red" onclick="flipBit(4)" id="4bit">4</span>
+                    +
+                    <span style="color: red" onclick="flipBit(2)" id="2bit">2</span>
+                    +
+                    <span style="color: red" onclick="flipBit(1)" id="1bit">1</span>
+                </p>
+                <small class="text-secondary"><i>Click each red or green number to flip its bit!</i></small>
+            </article>
+        </main>
+    </body>
+</html>
