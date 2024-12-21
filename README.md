@@ -1,2 +1,2 @@
 # binvis
-A simple tool to visualize the binary system.
+A simple tool to visualize the binary number system.
