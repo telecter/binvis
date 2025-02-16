@@ -1,5 +1,6 @@
-const counter = document.getElementById("binaryCounter");
-const base10Counter = document.getElementById("base10Counter");
+const binaryNum = document.getElementById('binaryNum');
+const base10Num = document.getElementById('base10Num');
+const bitsContainer = document.getElementById('bits');
 const bits = {
     1: false,
     2: false,
@@ -8,25 +9,16 @@ const bits = {
     16: false,
     32: false,
     64: false,
-    128: false
-}
-
-function flipBit(bit) {
-    const bitElement = document.getElementById(`${bit}bit`);
-    bits[bit] = !bits[bit];
-
-    if (bitElement.style.color == "green") {
-        bitElement.style.color = "red";
-    }
-    else if (bitElement.style.color == "red") {
-        bitElement.style.color = "green";
-    }
-
-    let num = 0;
-    for (const [k, v] of Object.entries(bits)) {
-        if (v) num += Number.parseInt(k);
-    }
-    counter.innerText = num.toString(2).padStart(8, '0');
-    base10Counter.innerText = num.toString()
-
+    128: false,
+};
+for (const [k, v] of Object.entries(bits)) {
+    const bitElement = document.createElement('span');
+    bitElement.style.color = 'red';
+    bitElement.style.zIndex = 1000;
+    bitElement.innerText = k.toString();
+    bitElement.onclick = e => {
+        console.log("nuts")
+    };
+    bitsContainer.appendChild(bitElement);
+    if (k != 128) bitsContainer.innerHTML += ' + ';
 }

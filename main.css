@@ -9,9 +9,22 @@
 }
 
 .text-secondary {
-    color: gray;
+    --pico-color: gray;
 }
 
 span {
     cursor: pointer;
+}
+
+#binaryNum {
+    font-size: 3.1rem;
+}
+
+#base10Num {
+    --pico-color: gray;
+    font-size: 1.8rem;
+}
+#bits {
+    --pico-color: gray;
+    font-size: 1.5rem;
 }

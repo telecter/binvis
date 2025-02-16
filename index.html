@@ -15,29 +15,33 @@
                 <h2>Visualize the binary number system.</h2>
             </hgroup>
         </header>
-        <hr>
+        <hr />
         <main class="container">
-            <article class="text-center">
-                <p style="font-size: 70px;" id="binaryCounter">00000000</p>
-                <p style="font-size: 40px;" class="text-secondary" id="base10Counter">0</p>
-                <p class="text-secondary" style="margin-top: 0; font-size: 30px;">
-                    <span style="color: red" onclick="flipBit(128)" id="128bit">128</span>
-                    +
-                    <span style="color: red" onclick="flipBit(64)" id="64bit">64</span>
-                    +
-                    <span style="color: red" onclick="flipBit(32)" id="32bit">32</span>
-                    +
-                    <span style="color: red" onclick="flipBit(16)" id="16bit">16</span>
-                    +
-                    <span style="color: red" onclick="flipBit(8)" id="8bit">8</span>
-                    +
-                    <span style="color: red" onclick="flipBit(4)" id="4bit">4</span>
-                    +
-                    <span style="color: red" onclick="flipBit(2)" id="2bit">2</span>
-                    +
-                    <span style="color: red" onclick="flipBit(1)" id="1bit">1</span>
-                </p>
-                <small class="text-secondary"><i>Click each red or green number to flip its bit!</i></small>
+            <section class="text-center">
+                <p id="binaryNum">00000000</p>
+                <p id="base10Num">0</p>
+                <div id="bits"></div>
+                <small class="text-secondary"><i>Click each number to flip its bit!</i></small>
+                <br />
+                <small class="text-secondary">
+                    <span style="color: red">red = off or 0</span> and
+                    <span style="color: green">green = on or 1</span>
+                </small>
+            </section>
+            <article>
+                <p>In Base 10, you would count in the powers of 10. For example,</p>
+                <p class="text-secondary" style="font-size: 25px">162</p>
+                <p class="text-secondary">ones, or 10^0: 2,<br>tens or 10^1: 6,<br>hundreds or 10^2: 1</p>
+                <p>So then, to find your number, multiply the values by the correct powers of 10:</p>
+                <p class="text-secondary">10^2(1) + 10^1(6) + 10^0(2) = 162</p>
+                <hr />
+                <p>It works the same in binary,</p>
+                <p class="text-secondary" style="font-size: 25px">10100010</p>
+                <p>Counting in the powers of two, each bit to the left has more value.</p>
+                <p class="text-secondary">2^0 place is 0,<br>2^1 place is 1 <br>2^2 place is 0...and so on</p>
+                <p>By adding them up just like in base 10, you can convert the binary number to decimal.</p>
+                <p class="text-secondary">2^0(0) + 2^1(1) + 2^2(0) + 2^3(0) + 2^4(0) + 2^5(1) + 2^6(0) + 2^7(1) = 162</p>
+                <p>This gives us 162, which is 10100010 represented in decimal.</p>
             </article>
         </main>
     </body>
