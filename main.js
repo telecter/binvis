@@ -1,5 +1,5 @@
-const counter = document.getElementById("binaryCounter");
-const base10Counter = document.getElementById("base10Counter");
+const counter = document.getElementById("binary-counter");
+const base10Counter = document.getElementById("decimal-counter");
 const bits = {
     1: false,
     2: false,
@@ -12,7 +12,7 @@ const bits = {
 }
 
 function flipBit(bit) {
-    const bitElement = document.getElementById(`${bit}bit`);
+    const bitElement = document.getElementById(`bit-${bit}`);
     bits[bit] = !bits[bit];
 
     if (bitElement.style.color == "green") {
