@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-        <link rel="stylesheet" href="./main.css" />
-        <link rel="icon" href="./favicon.png">
-        <script src="./main.js" defer></script>
-        <title>binvis</title>
-    </head>
-    <body>
-        <header class="container">
-            <hgroup>
-                <h1>binvis</h1>
-                <h2>Visualize the binary number system.</h2>
-            </hgroup>
-        </header>
-        <hr>
-        <main class="container">
-            <article class="text-center">
-                <p style="font-size: 3.5rem;" id="binary-counter">00000000</p>
-                <p style="font-size: 2.5rem;" class="text-secondary" id="decimal-counter">0</p>
-                <p class="text-secondary" style="margin-top: 0; font-size: 1.5rem;">
-                    <span style="color: red" onclick="flipBit(128)" id="bit-128">128</span>
-                    +
-                    <span style="color: red" onclick="flipBit(64)" id="bit-64">64</span>
-                    +
-                    <span style="color: red" onclick="flipBit(32)" id="bit-32">32</span>
-                    +
-                    <span style="color: red" onclick="flipBit(16)" id="bit-16">16</span>
-                    +
-                    <span style="color: red" onclick="flipBit(8)" id="bit-8">8</span>
-                    +
-                    <span style="color: red" onclick="flipBit(4)" id="bit-4">4</span>
-                    +
-                    <span style="color: red" onclick="flipBit(2)" id="bit-2">2</span>
-                    +
-                    <span style="color: red" onclick="flipBit(1)" id="bit-1">1</span>
-                </p>
-                <small class="text-secondary"><i>Click each red or green number to flip its bit!</i></small>
-            </article>
-            <article>
-                <p>In Base 10, you would count in the powers of 10. For example,</p>
-                <p class="text-secondary" style="font-size: 1.5rem;">162</p>
-                <p class="text-secondary">ones, or 10^0: 2,<br>tens or 10^1: 6,<br>hundreds or 10^2: 1</p>
-                <p>So then, to find your number, multiply the values by the correct powers of 10:</p>
-                <p class="text-secondary">10^2(1) + 10^1(6) + 10^0(2) = 162</p>
-                <hr />
-                <p>It works the same in binary,</p>
-                <p class="text-secondary" style="font-size: 1.5rem;">10100010</p>
-                <p>Counting in the powers of two, each bit to the left has more value.</p>
-                <p class="text-secondary">2^0 place is 0,<br>2^1 place is 1 <br>2^2 place is 0...and so on</p>
-                <p>By adding them up just like in base 10, you can convert the binary number to decimal.</p>
-                <p class="text-secondary">2^0(0) + 2^1(1) + 2^2(0) + 2^3(0) + 2^4(0) + 2^5(1) + 2^6(0) + 2^7(1) = 162</p>
-                <p>This gives us 162, which is 10100010 represented in decimal.</p>
-            </article>
-        </main>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="./favicon.png">
+    <script src="./main.js" defer></script>
+    <title>binvis</title>
+</head>
+
+<body>
+    <header class="container">
+        <hgroup>
+            <h1>binvis</h1>
+            <h2>Visualize the binary number system.</h2>
+        </hgroup>
+    </header>
+    <hr>
+    <main class="container">
+        <article class="text-center">
+            <p id="binary-counter">00000000</p>
+            <p class="text-secondary" id="decimal-counter">0</p>
+            <p class="text-secondary" style="margin-top: 0; font-size: 1.5rem;">
+                <span style="color: red" onclick="flipBit(128)" data-bit="128">128</span>
+                +
+                <span style="color: red" onclick="flipBit(64)" data-bit="64">64</span>
+                +
+                <span style="color: red" onclick="flipBit(32)" data-bit="32">32</span>
+                +
+                <span style="color: red" onclick="flipBit(16)" data-bit="16">16</span>
+                +
+                <span style="color: red" onclick="flipBit(8)" data-bit="8">8</span>
+                +
+                <span style="color: red" onclick="flipBit(4)" data-bit="4">4</span>
+                +
+                <span style="color: red" onclick="flipBit(2)" data-bit="2">2</span>
+                +
+                <span style="color: red" onclick="flipBit(1)" data-bit="1">1</span>
+            </p>
+            <small class="text-secondary"><i>Click each power of two to flip its bit!</i></small>
+        </article>
+        <article>
+            <p>In decimal (base 10), you would count in the powers of 10. For example,</p>
+            <p class="text-secondary" style="font-size: 1.5rem;">
+                <span style="color:red;">1</span><span style="color:green;">6</span><span style="color:blue;">2</span>
+            </p>
+            <p class="text-secondary">
+                <strong>hundreds</strong> or 10<sup>2</sup> place..<span style="color:red;">1</span><br>
+                <strong>tens</strong> or 10<sup>1</sup> place......<span style="color:green;">6</span><br>
+                <strong>ones</strong>, or 10<sup>0</sup> place.....<span style="color:blue;">2</span>
+            </p>
+            <p>So then, to find your number, multiply the numbers by their place value:</p>
+            <p class="text-secondary">
+                10<sup>2</sup>(<strong><span style="color:red;">1</span></strong>) + <br>
+                10<sup>1</sup>(<strong><span style="color:green;">6</span></strong>) + <br>
+                10<sup>0</sup>(<strong><span style="color:blue;">2</span></strong>) = 162
+            </p>
+            <hr />
+            <p>It works the same in binary,</p>
+            <p class="text-secondary" style="font-size: 1.5rem;">10100<span style="color:red;">0</span><span
+                    style="color:green;">1</span><span style="color:blue;">0</span></p>
+            <p>Counting in the powers of two instead of ten, each bit to the left has more value.</p>
+            <p class="text-secondary">
+                2<sup>0</sup> place...<span style="color:blue;">0</span><br>
+                2<sup>1</sup> place...<span style="color:green;">1</span><br>
+                2<sup>2</sup> place...<span style="color:red;">0</span><br>
+                <i>...and so on to the left</i>
+            </p>
+            <p>By adding them up just like in base 10, you can convert the binary number back.</p>
+            <p class="text-secondary">2<sup>0</sup>(<span style="color:blue;">0</span>) + 2<sup>1</sup>(<span style="color:green;">1</span>) + 2<sup>2</sup>(<span style="color:red;">0</span>) + 2<sup>3</sup>(0) + 2<sup>4</sup>(0) + 2<sup>5</sup>(1) + 2<sup>6</sup>(0) + 2<sup>7</sup>(1) = 162</p>
+            <p>This gives us 162, which is 10100010 represented in decimal.</p>
+        </article>
+    </main>
+    <footer class="container-fluid  ">
+        <small><a href="/">telecter.xyz</a></small>
+    </footer>
+</body>
+
 </html>
