@@ -1,3 +1,6 @@
+// Copyright (c) 2025 telecter
+// Licensed MIT, see LICENSE file.
+
 const counter = document.getElementById("binary-counter");
 const decimalCounter = document.getElementById("decimal-counter");
 const bits = {
@@ -13,10 +16,10 @@ const bits = {
 
 const elements = document.querySelectorAll("[data-bit]");
 for (const element of elements) {
-  element.onclick = () => {
+  element.addEventListener("click", () => {
     const bit = element.getAttribute("data-bit");
     flipBit(parseInt(bit));
-  };
+  });
 }
 
 function flipBit(bit) {
