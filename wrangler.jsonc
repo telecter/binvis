@@ -7,7 +7,7 @@
     "html_handling": "auto-trailing-slash"
   },
   "routes": [
-    {
+    {   
       "pattern": "telecter.xyz/binvis",
       "zone_name": "telecter.xyz"
     },
