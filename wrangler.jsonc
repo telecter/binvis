@@ -2,7 +2,7 @@
   "name": "binvis",
   "compatibility_date": "2025-08-19",
   "assets": {
-    "directory": "./",
+    "directory": "./src",
     "not_found_handling": "single-page-application",
     "html_handling": "auto-trailing-slash"
   },
