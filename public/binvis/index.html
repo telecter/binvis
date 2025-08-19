@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="icon" href="./favicon.png">
     <script src="./main.js" defer></script>
-    <title>binvis</title>
+    <title>binvis / visualize binary</title>
 </head>
 
 <body>
@@ -44,44 +44,13 @@
                 +
                 <span style="color: red" data-bit="1">1</span>
             </p>
-            <small class="text-secondary"><i>Click each power of two to flip its bit!</i></small>
+            <small class="text-secondary"><i>Click each bit to flip it from 0 to 1 or vice versa.</i></small>
         </article>
-        <article>
-            <p>In decimal (base 10), you would count in the powers of 10. For example,</p>
-            <p class="text-secondary" style="font-size: 1.5rem;">
-                <span style="color:red;">1</span><span style="color:green;">6</span><span style="color:blue;">2</span>
-            </p>
-            <p class="text-secondary">
-                <strong>hundreds</strong> or 10<sup>2</sup> place..<span style="color:red;">1</span><br>
-                <strong>tens</strong> or 10<sup>1</sup> place......<span style="color:green;">6</span><br>
-                <strong>ones</strong>, or 10<sup>0</sup> place.....<span style="color:blue;">2</span>
-            </p>
-            <p>So then, to find your number, multiply the numbers by their place value:</p>
-            <p class="text-secondary">
-                10<sup>2</sup>(<strong><span style="color:red;">1</span></strong>) + <br>
-                10<sup>1</sup>(<strong><span style="color:green;">6</span></strong>) + <br>
-                10<sup>0</sup>(<strong><span style="color:blue;">2</span></strong>) = 162
-            </p>
-            <hr />
-            <p>It works the same in binary,</p>
-            <p class="text-secondary" style="font-size: 1.5rem;">10100<span style="color:red;">0</span><span
-                    style="color:green;">1</span><span style="color:blue;">0</span></p>
-            <p>Counting in the powers of two instead of ten, each bit to the left has more value.</p>
-            <p class="text-secondary">
-                2<sup>0</sup> place...<span style="color:blue;">0</span><br>
-                2<sup>1</sup> place...<span style="color:green;">1</span><br>
-                2<sup>2</sup> place...<span style="color:red;">0</span><br>
-                <i>...and so on to the left</i>
-            </p>
-            <p>By adding them up just like in base 10, you can convert the binary number back.</p>
-            <p class="text-secondary">2<sup>0</sup>(<span style="color:blue;">0</span>) + 2<sup>1</sup>(<span
-                    style="color:green;">1</span>) + 2<sup>2</sup>(<span style="color:red;">0</span>) + 2<sup>3</sup>(0)
-                + 2<sup>4</sup>(0) + 2<sup>5</sup>(1) + 2<sup>6</sup>(0) + 2<sup>7</sup>(1) = 162</p>
-            <p>This gives us 162, which is 10100010 represented in decimal.</p>
+        <article id="expl">
         </article>
     </main>
     <footer class="container-fluid">
-        <small><a href="/">telecter.xyz</a></small>
+        <small><a href="/">telecter.xyz</a> // <a href="https://github.com/telecter/binvis">github</a></small>
     </footer>
 </body>
 
