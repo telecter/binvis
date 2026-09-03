@@ -8,12 +8,12 @@
   },
   "routes": [
     {   
-      "pattern": "telecter.xyz/binvis",
-      "zone_name": "telecter.xyz"
+      "pattern": "telecter.net/binvis",
+      "zone_name": "telecter.net"
     },
     {
-      "pattern": "telecter.xyz/binvis/*",
-      "zone_name": "telecter.xyz"
+      "pattern": "telecter.net/binvis/*",
+      "zone_name": "telecter.net"
     }
   ]
 }
